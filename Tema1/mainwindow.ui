@@ -11,14 +11,14 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Tema 1</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <layout class="QGridLayout" name="gridLayout_2">
+   <layout class="QGridLayout" name="gridLayout_3">
     <item row="0" column="0">
      <widget class="QTabWidget" name="tabWidget">
       <property name="currentIndex">
-       <number>0</number>
+       <number>2</number>
       </property>
       <widget class="QWidget" name="tab">
        <attribute name="title">
@@ -52,7 +52,13 @@
            </layout>
           </item>
           <item>
-           <widget class="QTextEdit" name="textEdit"/>
+           <widget class="QTextEdit" name="textEdit">
+            <property name="font">
+             <font>
+              <family>FreeMono</family>
+             </font>
+            </property>
+           </widget>
           </item>
          </layout>
         </item>
@@ -62,9 +68,43 @@
        <attribute name="title">
         <string>Problema 2</string>
        </attribute>
-       <layout class="QGridLayout" name="gridLayout_3">
+       <layout class="QGridLayout" name="gridLayout_2">
         <item row="0" column="0">
-         <widget class="QTextEdit" name="textEdit_2"/>
+         <layout class="QVBoxLayout" name="verticalLayout_2">
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_2">
+            <item>
+             <spacer name="horizontalSpacer_2">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QPushButton" name="pushButton_2">
+              <property name="text">
+               <string>Start</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <widget class="QTextEdit" name="textEdit_2">
+            <property name="font">
+             <font>
+              <family>FreeMono</family>
+             </font>
+            </property>
+           </widget>
+          </item>
+         </layout>
         </item>
        </layout>
       </widget>
@@ -74,7 +114,34 @@
        </attribute>
        <layout class="QGridLayout" name="gridLayout_4">
         <item row="0" column="0">
-         <widget class="QTextEdit" name="textEdit_3"/>
+         <layout class="QVBoxLayout" name="verticalLayout_3">
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_3">
+            <item>
+             <widget class="QComboBox" name="comboBox"/>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="lineEdit"/>
+            </item>
+            <item>
+             <widget class="QPushButton" name="pushButton_3">
+              <property name="text">
+               <string>Start</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <widget class="QTextEdit" name="textEdit_3">
+            <property name="font">
+             <font>
+              <family>FreeMono</family>
+             </font>
+            </property>
+           </widget>
+          </item>
+         </layout>
         </item>
        </layout>
       </widget>
@@ -88,7 +155,7 @@
      <x>0</x>
      <y>0</y>
      <width>568</width>
-     <height>21</height>
+     <height>23</height>
     </rect>
    </property>
   </widget>
@@ -112,8 +179,8 @@
    <slot>startP1()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>502</x>
-     <y>84</y>
+     <x>545</x>
+     <y>107</y>
     </hint>
     <hint type="destinationlabel">
      <x>464</x>
@@ -121,8 +188,42 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>pushButton_2</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>startP2()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>492</x>
+     <y>99</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>563</x>
+     <y>43</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_3</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>startP3()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>509</x>
+     <y>110</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>469</x>
+     <y>361</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>startP1()</slot>
+  <slot>startP2()</slot>
+  <slot>startP3()</slot>
  </slots>
 </ui>
