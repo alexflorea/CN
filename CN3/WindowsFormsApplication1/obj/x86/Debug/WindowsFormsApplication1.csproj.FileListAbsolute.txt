@@ -1,0 +1,13 @@
+c:\users\evgheni\documents\visual studio 2010\Projects\CN3\WindowsFormsApplication1\obj\x86\Debug\ResolveAssemblyReference.cache
+c:\users\evgheni\documents\visual studio 2010\Projects\CN3\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Form1.resources
+c:\users\evgheni\documents\visual studio 2010\Projects\CN3\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Properties.Resources.resources
+c:\users\evgheni\documents\visual studio 2010\Projects\CN3\WindowsFormsApplication1\obj\x86\Debug\GenerateResource.read.1.tlog
+c:\users\evgheni\documents\visual studio 2010\Projects\CN3\WindowsFormsApplication1\obj\x86\Debug\GenerateResource.write.1.tlog
+c:\users\evgheni\documents\visual studio 2010\Projects\CN3\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+c:\users\evgheni\documents\visual studio 2010\Projects\CN3\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+c:\users\evgheni\documents\visual studio 2010\Projects\CN3\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+c:\users\evgheni\documents\visual studio 2010\Projects\CN3\WindowsFormsApplication1\bin\Debug\dnAnalytics.dll
+c:\users\evgheni\documents\visual studio 2010\Projects\CN3\WindowsFormsApplication1\bin\Debug\zlib.net.dll
+c:\users\evgheni\documents\visual studio 2010\Projects\CN3\WindowsFormsApplication1\bin\Debug\dnAnalytics.xml
+c:\users\evgheni\documents\visual studio 2010\Projects\CN3\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.exe
+c:\users\evgheni\documents\visual studio 2010\Projects\CN3\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.pdb
