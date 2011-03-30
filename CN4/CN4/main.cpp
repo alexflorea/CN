@@ -6,11 +6,8 @@ using namespace std;
 
 int main()
 {
-
-	
-	
-	
-	
-
-return 0;
+	MatriceRara mr;
+	mr.loadSample();
+	mr.rezolva();
+	return 0;
 }
