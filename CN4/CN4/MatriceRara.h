@@ -5,7 +5,8 @@ class MatriceRara
 
 {
 public:
-	void ReadFile(char * t);
+	bool ReadFile(char* t);
+	void PrintAllAtributes();
 
 	//Linia i si coloana j
 	double A(int i, int j);
@@ -14,9 +15,10 @@ public:
 	double iteratie();
 	void print();
 	void printX();
-	void rezolva();
+	bool rezolva();
 	double sumaProdus(int i, int jMin, int jMax);
 	MatriceRara();
+	double verificaSolutie();
 
 private:
 	double *d,*val,*b,*x;

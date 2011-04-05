@@ -1,6 +1,6 @@
 #include <fstream>
 #include "MatriceRara.h"
-
+#include <iostream>
 using namespace std;
 
 MatriceRara::MatriceRara()
@@ -15,23 +15,129 @@ MatriceRara::MatriceRara()
 	NN = 0;
 }
 
-void MatriceRara::ReadFile(char * t)
-	{	
-		char c[256]="";
-		char *pch;
-		d=(double*)calloc(n,sizeof(double));
+bool MatriceRara::ReadFile(char * t)
+{	
+	ifstream in(t);
+	double int_val;
+	int int_i,int_j,int_d=0;
+	char c[256]="";
+	char *pch;
+	int counter=0,*counter_linii;
+	long k=0;
+	//Citirea lui n
+	in.getline(c,250);
+	n=atoi(c);
+	in.getline(c,250);
 
-		ifstream in(t);
-		in.getline(c,256);
-		n=atoi(c);
-		in.getline(c,256);
-		for(int i;i<n;i++)
-		{
-		in.getline(c,256);
-		pch = strtok (c," ,");   
-		n=atoi(pch);
-		pch = strtok (NULL, " ,");
+	//Numaram numarul de linii in fisier
+	while(!in.eof())
+	{
+		in.getline(c,250);
+		k++;
 	}
+	in.close();
+	in.open(t);
+	b=(double*)calloc(n,sizeof(double));
+	d=(double*)calloc(n,sizeof(double));
+	val=(double*)calloc(k-n-2,sizeof(double));
+	col=(int*)calloc(k-n-3,sizeof(int));
+	linii=(int*)calloc(n+1,sizeof(int));
+	counter_linii=(int*)calloc(n+1,sizeof(int));
+	NN=k-n-n-2;
+
+	in.getline(c,256);
+	in.getline(c,256);
+
+	//Citirea lui b
+	for(int i=0;i<n;i++)
+	{
+		in.getline(c,256);  
+		b[i]=atof(c);
+	}
+	in.getline(c,256);
+
+	//citirea lui val,linii,col
+	for(long i=0;i<k-n-2;i++)
+	{	
+		//val
+		in.getline(c,256); 
+		pch=strtok(c," ,");
+		int_val=atof(pch);
+
+		//linii 
+		pch=strtok(NULL," ,");
+		int_i=atoi(pch);
+
+		//coloane
+		pch=strtok(NULL," ,");
+		int_j=atoi(pch);
+
+		if(int_i!=int_j)
+		{
+			val[counter]=int_val;
+			col[counter]=int_j-1;
+			counter++;
+			counter_linii[int_i]++;
+		}
+		else
+		{
+			d[int_d]=int_val;
+			int_d++;
+
+		}
+	}
+	linii[0]=0;
+	for (long i=1;i<n+1;i++)
+		linii[i]=linii[i-1]+counter_linii[i];
+
+	for(int i = 0; i < n; i++) {
+		if(d[i] == 0) {
+			return false;
+		}
+	}
+	return true;
+}
+void MatriceRara::PrintAllAtributes()
+{	
+	cout << "n = " << n<<endl;
+	cout << "NN = "<< NN << endl;
+
+	//diagonala
+	cout << "d = { ";
+	for (long i=0;i<n;i++)
+	{
+		cout << d[i];
+		if (i!=n-1) cout << ", ";
+	}
+		cout <<" }"<< endl;
+	
+	//val
+	cout << "val = { ";
+	for (long i=0;i<NN;i++)
+	{
+		cout << val[i];
+		if (i!=NN-1) cout << ", ";
+	}
+	cout <<" }"<< endl;
+
+	//col
+	cout << "col = { ";
+	for (long i=0;i<NN;i++)
+	{
+		cout << col[i];
+		if (i!=NN-1) cout << ", ";
+	}
+	cout <<" }"<< endl;
+
+	//linii
+	cout << "linii = { ";
+	for (long i=0;i<n+1;i++)
+	{
+		cout << linii[i];
+		if (i!=n) cout << ", ";
+	}
+	cout <<" }"<< endl;
+
 }
 
 double MatriceRara::A(int i, int j)
@@ -139,23 +245,29 @@ double MatriceRara::iteratie()
 		for(int i = 0; i < n; i++) {
 			x[i] = 0;
 		}
-		printX();
+		//printX();
 	}
 
 	double deltaX = 0;
 	for(int i = 0; i < n; i++) {
 		double oldXI = x[i];
-		//double suma1 = 0;
-		//for(int j = 0; j < i; j++) {
-		//	suma1 += A(i, j) * x[j];
-		//}
-		//double suma2 = 0;
-		//for(int j = i+1; j < n; j++) {
-		//	suma2 += A(i, j) * x[j];
-		//}
-		//x[i] = b[i] - suma1 - suma2;
-		
+
+		//Varianta neeficienta
+/*
+		double suma1 = 0;
+		for(int j = 0; j < i; j++) {
+			suma1 += A(i, j) * x[j];
+		}
+		double suma2 = 0;
+		for(int j = i+1; j < n; j++) {
+			suma2 += A(i, j) * x[j];
+		}
+		x[i] = b[i] - suma1 - suma2;
+*/
+		//varianta eficienta
 		x[i] = b[i] - sumaProdus(i, 0, i) - sumaProdus(i, i+1, n);
+
+
 		x[i] /= A(i, i);
 		
 		deltaX += fabs(oldXI - x[i]);
@@ -171,14 +283,29 @@ void MatriceRara::printX()
 	printf("\n");
 }
 
-void MatriceRara::rezolva()
+bool MatriceRara::rezolva()
 {
 	int k = 0;
-	int kmax = 10;
+	int kmax = 200;
 	double delta;
 	do {
 		delta = iteratie();
 		k++;
-		printX();
-	} while(delta > 0.000000001 && k < kmax && delta < 1000000000);
+			printf(".");
+		//printX();
+	} while(delta > 0.000000000001 && k < kmax && delta < 1000000000);
+	if(delta >=  1000000000) {
+		return false;
+	}
+	printf("\n");
+	return true;
+}
+
+double MatriceRara::verificaSolutie()
+{
+	double delta = 0;
+	for(int i = 0; i < n; i++) {
+		delta += fabs(sumaProdus(i, 0, n) - b[i]);
+	}
+	return delta;
 }
