@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.IO;
-
+using dnAnalytics.LinearAlgebra;
 namespace Tema5
 {
     class Matrix
     {
+        
         Matrix()
         {
 
@@ -23,6 +24,7 @@ namespace Tema5
             }
             return true;
         }
+        
 
         void PrintMatrix()
         {
