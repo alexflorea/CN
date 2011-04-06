@@ -1,0 +1,8 @@
+C:\Users\Evgheni\Documents\GIT\CN-final\CN\CN\Tema5\bin\Debug\Tema5.exe
+C:\Users\Evgheni\Documents\GIT\CN-final\CN\CN\Tema5\bin\Debug\Tema5.pdb
+C:\Users\Evgheni\Documents\GIT\CN-final\CN\CN\Tema5\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Evgheni\Documents\GIT\CN-final\CN\CN\Tema5\obj\x86\Debug\Tema5.Properties.Resources.resources
+C:\Users\Evgheni\Documents\GIT\CN-final\CN\CN\Tema5\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\Evgheni\Documents\GIT\CN-final\CN\CN\Tema5\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\Evgheni\Documents\GIT\CN-final\CN\CN\Tema5\obj\x86\Debug\Tema5.exe
+C:\Users\Evgheni\Documents\GIT\CN-final\CN\CN\Tema5\obj\x86\Debug\Tema5.pdb
