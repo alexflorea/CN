@@ -14,6 +14,9 @@ namespace Tema5
         public Form5()
         {
             InitializeComponent();
+            Matrice m = new Matrice();
+            m.ReadFile("input.txt");
+            m.PrintMatrix(this.textBox1);           
         }
     }
 }
