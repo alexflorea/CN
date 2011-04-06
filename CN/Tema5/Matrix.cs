@@ -29,16 +29,15 @@ namespace Tema5
             N = int.Parse(numbers[0]);
             P = int.Parse(numbers[1]);
 
-            A = new double[P][];
+            A = new DenseMatrix(P, N);
             for (int i = 0; i < P; i++) {
                 buffer = tr.ReadLine();
                 numbers = buffer.Split(' ');
-                A[i] = new double[N];
                 for (int j = 0; j < N; j++) {
-                    A[i][j] = int.Parse(numbers[j]);
+                    A[i,j] = int.Parse(numbers[j]);
                 }
             }
-            B = new double[P];
+            B = new DenseVector(P);
             for (int i = 0; i < P; i++) {
                 buffer = tr.ReadLine();
                 B[i] = int.Parse(buffer);                
@@ -52,7 +51,7 @@ namespace Tema5
         {
             for (int i = 0; i < P; i++) {
                 for (int j = 0; j < N; j++) {
-                    tb.AppendText(A[i][j] + " ");
+                    tb.AppendText(A[i,j] + " ");
                 }
                 tb.AppendText("\n");
             }
@@ -63,7 +62,7 @@ namespace Tema5
 
         public int N { get; set; }
         public int P { get; set; }
-        public double[][] A { get; set; }
-        public double[] B { get; set; }
+        public Matrix A { get; set; }
+        public Vector B { get; set; }
     }
 }
