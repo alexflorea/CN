@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.IO;
 using System.Windows.Forms;
-
+using dnAnalytics.LinearAlgebra;
 namespace Tema5
 {
     class Matrice
@@ -46,6 +46,7 @@ namespace Tema5
 
             return true;
         }
+        
 
         public void PrintMatrix(TextBox tb)
         {
