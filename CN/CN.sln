@@ -3,6 +3,12 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tema5", "Tema5\Tema5.csproj", "{2ABACE6F-EA41-4DB2-A794-B0918EC3582A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tema6", "Tema6\Tema6.csproj", "{B51E10E7-742E-4696-A0C4-6D3F4FA69BD8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tema7", "Tema7\Tema7.csproj", "{C30810F1-B4F2-404B-BA1D-579CADA15DEF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tema8", "Tema8\Tema8.csproj", "{C90B5DAB-4258-46B6-B29E-3B16318530CA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -13,6 +19,18 @@ Global
 		{2ABACE6F-EA41-4DB2-A794-B0918EC3582A}.Debug|x86.Build.0 = Debug|x86
 		{2ABACE6F-EA41-4DB2-A794-B0918EC3582A}.Release|x86.ActiveCfg = Release|x86
 		{2ABACE6F-EA41-4DB2-A794-B0918EC3582A}.Release|x86.Build.0 = Release|x86
+		{B51E10E7-742E-4696-A0C4-6D3F4FA69BD8}.Debug|x86.ActiveCfg = Debug|x86
+		{B51E10E7-742E-4696-A0C4-6D3F4FA69BD8}.Debug|x86.Build.0 = Debug|x86
+		{B51E10E7-742E-4696-A0C4-6D3F4FA69BD8}.Release|x86.ActiveCfg = Release|x86
+		{B51E10E7-742E-4696-A0C4-6D3F4FA69BD8}.Release|x86.Build.0 = Release|x86
+		{C30810F1-B4F2-404B-BA1D-579CADA15DEF}.Debug|x86.ActiveCfg = Debug|x86
+		{C30810F1-B4F2-404B-BA1D-579CADA15DEF}.Debug|x86.Build.0 = Debug|x86
+		{C30810F1-B4F2-404B-BA1D-579CADA15DEF}.Release|x86.ActiveCfg = Release|x86
+		{C30810F1-B4F2-404B-BA1D-579CADA15DEF}.Release|x86.Build.0 = Release|x86
+		{C90B5DAB-4258-46B6-B29E-3B16318530CA}.Debug|x86.ActiveCfg = Debug|x86
+		{C90B5DAB-4258-46B6-B29E-3B16318530CA}.Debug|x86.Build.0 = Debug|x86
+		{C90B5DAB-4258-46B6-B29E-3B16318530CA}.Release|x86.ActiveCfg = Release|x86
+		{C90B5DAB-4258-46B6-B29E-3B16318530CA}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
