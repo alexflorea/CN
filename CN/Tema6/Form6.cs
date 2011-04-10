@@ -14,6 +14,10 @@ namespace Tema6
         public Form6()
         {
             InitializeComponent();
+
+            Function f = new Function();
+            f.MetodaNewtonRaphson();
+            f.PrintRadacini(this.textBox1);
         }
     }
 }
